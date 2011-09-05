@@ -19,6 +19,7 @@ Cool stuff:
 * My entire blog is [automagically in source control](https://github.com/hross/hross.github.com)
 * Updating entries is as simple as making changes using git
 * Pretty much free, minus the cost of pointing a domain name at the blog if I so choose.
+* Preston-Warner makes his [blog template freely available on github](https://github.com/mojombo/tpw)
 
 Not as cool stuff:
 
