@@ -94,7 +94,7 @@ ul.posts {
   
   .site .title span {
   	color: #000;
-  	font-weight: none;
+  	font-weight: normal;
   	font-style: italic;
   	font-size: 90%;
   }
