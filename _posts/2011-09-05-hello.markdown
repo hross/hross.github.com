@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Adventures in GitHub Blogging
-categories: [github, blog, jekyll]
+categories: [github]
 ---
 
 I got tired of [Drupal](http://www.drupal.org) as a blogging platform awfully quickly. It ended up being too much for my needs (as is probably the case with anyone who is using it solely for blogging).
