@@ -89,7 +89,7 @@ ul.posts {
 .title {
   color: #a00;
   font-weight: bold;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
   
   .site .title span {
@@ -97,8 +97,7 @@ ul.posts {
   	font-weight: normal;
   	font-style: italic;
   	font-size: 90%;
-  	margin-left: 2em;
-  	margin-top: 2em;
+  	margin-left: .2em;
   }
   
   .site .title a {
