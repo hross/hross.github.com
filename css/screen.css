@@ -97,6 +97,8 @@ ul.posts {
   	font-weight: normal;
   	font-style: italic;
   	font-size: 90%;
+  	margin-left: 2em;
+  	margin-top: 2em;
   }
   
   .site .title a {
@@ -143,6 +145,10 @@ ul.posts {
       margin-top: 1.1em;
       float: right;
     }
+    
+       .site .footer .rss a {
+          color: #8085C1;
+        }
 
     .site .footer .rss img {
         border: 0;
