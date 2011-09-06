@@ -174,7 +174,7 @@ ul.posts {
   #post pre {
     border: 1px solid #ddd;
     background-color: #eef;
-    padding: 0 .4em;
+    padding: .1em .4em;
   }
   
   #post h1,h2,h3,h4,h5 {
