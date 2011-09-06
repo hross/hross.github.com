@@ -99,6 +99,7 @@ ul.posts {
   	font-style: italic;
   	font-size: 90%;
   	margin-left: .2em;
+  	float: right;
   }
 
   .site .title img {
