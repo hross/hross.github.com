@@ -93,7 +93,7 @@ ul.posts {
   margin-bottom: 1em;
 }
   
-  .site .title span {
+  .site .title .subhead {
   	color: #000;
   	font-weight: normal;
   	font-style: italic;
