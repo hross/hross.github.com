@@ -7,6 +7,7 @@ categories: [drupal]
 One major question I had when I first started debugging module code was "how can I see how my code is performing?". Turns out its pretty easy to get this info in a variety of ways.
 
 ### XHProf
+
 The talk of the PHP profiling town seems to be [Facebook's latest entry XHProf](https://github.com/facebook/xhprof). For what I'm looking for it's a bit heavy, and it only seems to work on Linux, which is a problem, since I'm developing and deploying on a mac and a wintel box.
 
 ### Xdebug

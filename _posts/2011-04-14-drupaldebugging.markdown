@@ -15,6 +15,7 @@ This is the quick and dirty way to "write to console" in Drupal. Simply putting 
 Will print to the Drupal log (Admin | Recent Log Messages).
 
 ### XDebug
+
 I highly recommend you immediately download and install [XDebug](http://www.xdebug.org/) for your PHP installation. Many *AMP stacks include it by default ([MAMP](http://www.mamp.info/en/index.html) and [XAMPP](http://www.apachefriends.org/en/xampp.html) among them). 
 
 Along with a bunch of other stuff, it will "pretty print"  PHP error messages in HTML, so the next time you take your Drupal  instance down by forgetting a semicolon, you'll see a nicely formatted call stack, memory profile, etc.. Installing it is ridiculously easy,  since [they give you very specific instructions based on your configuration](http://www.xdebug.org/find-binary.php).
@@ -42,6 +43,7 @@ Another nifty trick is replacing the default PHP error handler with your own (us
 		// call php error handler
 		return false;
 	}
+
 
 ### Warning: mysql_real_escape_string() expects parameter 1 to be string, array given in includes/database.mysql.inc on line 321
 
