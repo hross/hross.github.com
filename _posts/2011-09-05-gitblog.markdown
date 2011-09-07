@@ -19,8 +19,10 @@ Cool stuff:
 * I can use [markdown](http://warpedvisions.org/projects/markdown-cheat-sheet/) for my blog posts
 * My entire blog is [automagically in source control](https://github.com/hross/hross.github.com)
 * Updating entries is as simple as making changes using git
+* I can edit the blog entries on [github](http://github.com) from anywhere I have an internet connection
 * Pretty much free, minus the cost of pointing a domain name at the blog if I so choose.
 * Preston-Warner makes his [blog template freely available on github](https://github.com/mojombo/tpw)
+* [diqus](http://disqus.com) works great for comments
 
 Not as cool stuff:
 
@@ -28,4 +30,5 @@ Not as cool stuff:
 * I have to maintain my own HTML templates, SEO, etc
 * I have to use git (pro and con)
 * Have to learn yet another templating language (Jekyll). This looks useful: [Jekyll Template Wiki](https://github.com/mojombo/jekyll/wiki/template-data).
-* All my blog updates are public on github (unless I want to start paying them for private repos).
+* All my blog updates are public on github (unless I want to start paying them for private repos)
+* I have to pay for a github account if I want to point a hostname at my github blog url (hross.net --> hross.github.com)
