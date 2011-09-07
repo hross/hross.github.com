@@ -14,7 +14,7 @@ Hopefully I can save you some time and effort in similar endeavors. Without furt
 
 It's nothing fancy (yes, there are even possible SQL injection vulnerabilities), but if you want a simple example of jQuery, iBATIS, Java and the portal, this is definitely something to check out. All you should have to do is import the war file into eclipse and read the index.html documentation.
 
- [1]: http://hross.net/blog/2009/05/direct-web-remoting-jquery-and.html
+ [1]: /jquery/dwr/2009/05/11/dwrjquerytables.html
  [2]: http://www.spartanjava.com/2008/paginated-lists-made-really-easy-part-1-of-2-front-end/
  [3]: http://dotnetslackers.com/articles/ajax/JQuery-Primer-Part-1.aspx
  [4]: http://directwebremoting.org/dwr/documentation.html

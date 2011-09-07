@@ -179,7 +179,7 @@ There are, of course, a few shortcomings:
 
 I have to assume these drawbacks will be addressed in future updates, as they have been in the past. I am willing to accept them as the price to pay for being on the bleeding edge of the cloud.
 
- [1]: http://hross.net/blog/2009/05/running-a-game-server-on-amazo.html
+ [1]: /ec2/2009/05/10/ec2gameserver.html
  [2]: http://aws.amazon.com/about-aws/whats-new/2009/05/17/monitoring-auto-scaling-elastic-load-balancing/
  [3]: http://aws.amazon.com/cloudwatch/
  [4]: http://munin.projects.linpro.no/

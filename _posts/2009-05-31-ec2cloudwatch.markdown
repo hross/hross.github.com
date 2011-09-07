@@ -23,7 +23,7 @@ Figure 2 - CPU Usage over a 2 hour F.E.A.R. game
 
 This is a short and imperfect analysis, but overall I'd say the “small” EC2 instance could easily have handled a 16 person game, both from a load and network traffic standpoint, and it would have cost me a dollar or so to host for 2 hours. That seems like great bang for your buck if you're looking to crank up a quick game and then move on to something else.
 
- [1]: http://hross.net/blog/2009/05/running-a-game-server-on-amazo.html
- [2]: http://hross.net/blog/2009/05/monitoring-performance-with-am.html
+ [1]: /ec2/2009/05/10/ec2gameserver.html
+ [2]: /ec2/2009/05/19/cloudwatch.html
  [3]: /images/ec2_network_io.png
  [4]: /images/ec2_cpu_usage.png
