@@ -1,0 +1,40 @@
+---
+layout: post
+title: Configuring Oracle XE
+categories: [oracle]
+---
+
+Lately I have found myself setting up a lot of Amazon EC2 instances, new computers, virtual machines and the like. As such, I've come to know and love [Oracle XE][1]. While it “just works”, there are a few tweaks that vastly improve performance and behavior. All of these tweaks require you to log in as the system user and run the noted SQL. In no particular order, they are:
+
+1.  Modifying the default listening port of the web server (why is it listening on the default Tomcat port?!): 
+        begin
+        	dbms_xdb.sethttpport('7080');
+        	dbms_xdb.setftpport('2100');
+        end;
+
+2.  Increasing the number of sessions and processes so you don't get locked out of the database: 
+        alter system set sessions=250 scope=spfile;
+        alter system set processes=200 scope=spfile;
+
+3.  Making the web server available for non-local access (in case you are running out of a console): 
+        begin 
+        	dbms_xdb.setlistnerlocalaccess(false); 
+        end;
+
+Here are the original links for these tips: 
+
+Finally, I have a tip of my own. If you are running Oracle XE in an EC2 instance ([see this article][2]), you will undoubtedly notice that when you restart your brand new AMI with a new IP, Oracle will fail to start (doh!). In order to fix this, you need to do the following:
+
+1.  Make copies of your listener.ora and tnsnames.ora files. Modify them so that your current hostname in EC2 is replaced with “localhost”, and rename them to listener.ora.localhost and tnsnames.ora.localhost. 
+2.  Add this script to the /etc/init.d/oracle-xe startup script (under start is preferable): 
+        NEWHOST=`hostname`
+        
+        sed s/localhost/$NEWHOST/ /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin/listener.ora.localhost &gt; /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin/listener.ora
+        sed s/localhost/$NEWHOST/ /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin/tnsnames.ora.localhost &gt; /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin/tnsnames.ora
+
+3.  Profit (you may want to modify the above to run as the oracle user -- not as root). 
+
+(sorry Windows users, you will have to create your own variation of this)
+
+ [1]: http://www.oracle.com/technology/products/database/xe/index.html
+ [2]: http://www.oracle.com/technology/pub/articles/lokitz-cloud.html  
