@@ -3,6 +3,7 @@ layout: post
 title: Apache Directory
 categories: [ldap]
 ---
+
 In one of my [previous posts][1] I mentioned [Apache Directory Studio][2] as a great way to view LDAP directories, but the entire [Apache Directory][3] project really deserves its own post (and here it is).
 
 First of all, Apache has implemented a fully featured directory browser ([Apache Directory Studio][2]) and a fully featured LDAP directory ([Apache Directory Server][4]). Both of these projects are entirely Java based. Studio is an eclipse based directory browser with all the bells and whistles. [JXplorer][5] is nice, but not as powerful or as easy to use.

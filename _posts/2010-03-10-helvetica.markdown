@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Charity Campaign (a node.js web app)
+title: Helvetica
 categories: [design]
 ---
 
