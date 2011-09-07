@@ -14,7 +14,7 @@ And, oh by the way, you can also [embed and manipulate ApacheDS in your own appl
 
 So, if you are looking for an easy, free, directory implementation for your next proof of concept, demo, or unit test, look no further than ApacheDS.
 
- [1]: http://hross.net/blog/2009/09/windows-tools.html
+ [1]: http://hross.github.com/windows/utilities/2009/09/12/windowstools.html
  [2]: http://directory.apache.org/studio/
  [3]: http://directory.apache.org/
  [4]: http://directory.apache.org/apacheds/1.5/
