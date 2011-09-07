@@ -29,8 +29,10 @@ Finally, I have a tip of my own. If you are running Oracle XE in an EC2 instance
 2.  Add this script to the /etc/init.d/oracle-xe startup script (under start is preferable): 
         NEWHOST=`hostname`
         
-        sed s/localhost/$NEWHOST/ /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin/listener.ora.localhost &gt; /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin/listener.ora
-        sed s/localhost/$NEWHOST/ /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin/tnsnames.ora.localhost &gt; /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin/tnsnames.ora
+        sed s/localhost/$NEWHOST/ /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin/listener.ora.localhost
+        > /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin/listener.ora
+        sed s/localhost/$NEWHOST/ /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin/tnsnames.ora.localhost
+        > /usr/lib/oracle/xe/app/oracle/product/10.2.0/server/network/admin/tnsnames.ora
 
 3.  Profit (you may want to modify the above to run as the oracle user -- not as root). 
 
