@@ -23,6 +23,8 @@ The [vision media samples](https://github.com/visionmedia/express/tree/master/ex
 
 [Stackoverflow](http://stackoverflow.com/) was useful for finding [configuration management information](http://stackoverflow.com/questions/5869216/how-to-store-node-js-deployment-settings-configuration-files).
 
-[Geddy](http://geddyjs.org/) looked like a good MVC starting place, but development appears to be halted. [Mongoose](http://blog.learnboost.com/blog/mongoose/) looked cool, but seemed a bit heavy and constrictive. It probably would have helped with data validation and error handling, though.
-
 Found a good [csv parsing](http://blog.james-carr.org/2010/07/07/parsing-csv-files-with-nodejs/) starting point (ended up hacking this code to bits, but the basics and the regex are there).
+
+Twitter recently released [boostrap](http://twitter.github.com/bootstrap/) and it seemed cool so I converted the user interface to use it (previously I was using some free html template or other).
+
+[Geddy](http://geddyjs.org/) looked like a good MVC starting place, but development appears to be halted. [Mongoose](http://blog.learnboost.com/blog/mongoose/) looked cool, but seemed a bit heavy and constrictive. It probably would have helped with data validation and error handling, though.
