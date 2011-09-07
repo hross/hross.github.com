@@ -1,0 +1,42 @@
+---
+layout: post
+title: Using diff to avoid re-importing PTE's
+categories: [webcenter]
+---
+
+Let's take a quick timeout from Search for a more basic post...
+
+I don't have a "Cool Tools" section of my blog, like some other [notable ALUI bloggers][1], but I do know of a few "cool tools" that have helped me do my job. One of my favorites is a fancy [diff][2] utility called [WinMerge][3].
+
+*(go download it now if you haven't already)*
+
+One of the primary things I use it for is validating product upgrades. If you're as lazy and/or paranoid as I am, you have probably given pause during an ALUI upgrade when you saw the step "re-import the PTE". As most of us know, re-importing a PTE is a mixed bag, as it comes along with a lot of dependencies and can frequently wipe out customizations to web services, portlets, etc. Worse yet, you never quite know what's happening when you import.
+
+What if we could analyze a PTE and figure out what changes were made so that we could either: 
+
+*   make the changes ourselves
+*   not bother re-importing
+*   at least know what changes were going to be made to our existing data?
+
+Turns out this is rather simple (and, obviously, involves WinMerge).
+
+Let's use a relevant example to demonstrate: a Publisher upgrade from 6.4 to 6.5. This is an upgrade of a minor revision number, so you would think there would be relatively few changes to the PTE's. Nonetheless, the install guide tells me to re-import, re-import, re-import.
+
+Yuck.
+
+Instead, I'll take an alternate approach. First, I run the Publisher 6.5 upgrade installer as I normally would. However, once I get to the re-import step, I navigate to the ptcs/6.4/serverpackages directory of my **previous Publisher install** and grab the publisher.pte file therein. Next, I grab the same PTE file from my ptcs/6.5/serverpackages directory.
+
+Now I have both default install PTE's. Any differences between them will be the changes due to the 6.4 to 6.5 upgrade. Since these PTE's are really just XML files with fairly obvious naming conventions, I simply open them up side by side in WinMerge and compare the differences...
+
+![pte_diff][4]
+
+As it turns out, the only changes to the Publisher package in 6.5 are some /jspell URL's that have been added to the gateway settings for some web services. Since I can read the new URL in WinDiff, I can copy the gateway URL's and add them manually. Now I no longer need to import the PTE.
+
+... and even if there were more changes and I had to re-import, I would be well informed of what they were before running the import.
+
+Okay. We now return you to your regularly scheduled programming.
+
+ [1]: http://function1.com
+ [2]: http://en.wikipedia.org/wiki/Diff
+ [3]: http://www.winmerge.org/
+ [4]: /images/diffpte.jpg
