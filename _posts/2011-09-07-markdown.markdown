@@ -1,10 +1,11 @@
 ---
 layout: post
-title: Apache Directory
+title: Converting HTML to Markdown
 categories: [markdown]
 ---
 
-I started converting old posts and found it was a breeze (other than the annoyance of link conversion). There is a great web based HTML to markdown converter. Here are a couple of links in case you're in the same situation:
+I started converting some old posts and found it was a breeze (other than the annoyance of link conversion). There is a great web based HTML to markdown converter. Here are a couple of links in case you're in the same situation:
+
 * [HTML to Markdown converter][3]
 * [A quick markdown cheat sheet][2]
 * [A sweet markdown primer][1]
