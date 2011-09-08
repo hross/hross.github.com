@@ -1,0 +1,38 @@
+---
+layout: post
+title: Keeping Track of Your Job Logs
+categories: [webcenter]
+---
+
+Over time, there are a lot of bad things that can happen to a portal installed at a customer site. Unfortunately, philosophically speaking, we are all fighting entropy in our daily lives (think about how many times you've done laundry or taken out the trash). Portal maintenance is just another way of doing that.
+
+Every portal instance that's running properly has at least one Automation Server running in the background. The Automation Server is supposed to take care of automated tasks like Analytics data collation, the periodic synchronization of users and groups, and system maintenance. 
+
+The cool thing about Automation Server is that it will save a log of each job's results so that you can view it later. These results are stored in the database in the *PTJOBLOGS* table. The uncool thing is that sometimes the job results are **many** pages long. So many pages, in fact, that a few runs can start to eat up space in your database at an enormous rate. There are a few things you should know about this, and a few things you should know about how to mitigate it. 
+
+### Managing Job Log Space Usage
+
+First, let's review your space-saving options:
+
+1.  *You can reduce the frequency of jobs that have verbose output.* This is probably a crappy option, unless you really don't need to run the job in question. 
+2.  *You can reduce the verbosity of your jobs.* Every job in the portal contains a setting called **Logging Level**. This setting allows you to control what actually shows up in the result log for the job. Your options are Silent, Low, Normal and Verbose. Obviously, setting a job to silent can have a detrimental impact if it fails (you won't know why), whereas setting it to verbose can have a detrimental impact on the amount of space it eats up. Some jobs don't always need a high level of verbosity. 
+3.  *You can increase the frequency at which your job logs are cleaned up.* By default, the portal will save job logs for 60 days before they are removed from the database. The* Weekly Housekeeping Job* will remove any job logs older than 60 days each time it is run. In my experience, this is quite a long time. Unfortunately, there is no way to change this value in the user interface of the portal. You can, however, change it in the database with the following SQL:
+
+    UPDATE PTSERVERCONFIG SET VALUE= WHERE SETTINGID=15
+
+Where ** is the number of days you'd like to keep your job logs for. Reducing this number will reduce the size of your PTJOBLOGS table. *(do I need to mention you should double check the SETTINGID and back up the table before running this?)*
+
+### What happens when the job log table gets too big?
+
+If you haven't mitigated the size of your *PTJOBLOGS* table, or you somehow forgot to schedule the *Weekly Housekeeping Job* for a while, or you have some other space problem in your database, you may run into some issues:
+
+1.  Your *Weekly Housekeeping Job* may fail. Unfortunately, this job tries to run a query on PTJOBLOGS and then delete the necessary rows. If you have an enormous number of rows, the SQL statement it uses to do this is a long running operation which may actually cause automation server to think the Weekly Housekeeping Job has become unresponsive and kill it (it will show up as Failed in your job history). 
+2.  Your database may have space issues. 
+
+To correct these problems, you can do one of two things. You can either truncate the PTJOBLOGS table (not recommended, but possibly necessary if you're in dire straits), or you can run something like the following (this is PL/SQL):
+
+    DELETE FROM PTJOBLOGS WHERE INSTANCEID SELECT MAX(INSTANCEID) FROM PTJOBHISTORY WHERE RUNTIME '01/01/2008','mm/dd/yyyy'));
+    DELETE FROM PTJOBOPHISTORY WHERE RUNTIME '01/01/2008','mm/dd/yyyy');
+    DELETE FORM PTJOBHISTORY WHERE RUNTIME '01/01/2008','mm/dd/yyyy');
+
+Note that you'll have to modify this a bit for it to work on SQL Server, and you will need to change the date as appropriate, but you get the idea.  
