@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Charity Campaign (a node.js web app)
+title: Charity Campaign (building a node.js web app)
 categories: [node.js, mongodb]
 ---
 
