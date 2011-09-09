@@ -4,7 +4,7 @@ title: Charity Campaign (building a node.js web app)
 categories: [node.js, mongodb]
 ---
 
-Over the past month or so I've been putting together a [node.js](http://nodejs.org/) application for fun. The goal was to get some "real world" development experience with [node.js](http://nodejs.org/) and [mongodb](http://www.mongodb.org/).. figure out what the challenges are (is event oriented programming hard? how will I live life without a traditional RDBMS?) and build something people might actually use.
+Over the past month or so I've been putting together a [node.js](http://nodejs.org/) application for fun. The goal was to get some "real world" development experience with [node.js](http://nodejs.org/) and [mongodb](http://www.mongodb.org/), figure out what the challenges are (is event oriented programming hard? how will I live life without a traditional RDBMS?) and build something people might actually use.
 
 To wit: [Charity Campaign](https://github.com/hross/Charity-Campaign)... an application for tracking charity drive donations. The basic concept is to have teams of users submitting various items, assign bonuses to those users based on what they submit, give some basic security/management and display stats.
 
