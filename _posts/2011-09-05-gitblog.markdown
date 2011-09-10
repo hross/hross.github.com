@@ -4,6 +4,8 @@ title: Adventures in GitHub Blogging
 categories: [github]
 ---
 
+*Update:* Looks like [Development Seed](http://developmentseed.org/) had a [similar idea](http://developmentseed.org/blog/2011/09/09/jekyll-github-pages/), so I'm in good company.
+
 I got tired of [Drupal](http://www.drupal.org) as a blogging platform awfully quickly. It ended up being too much for my needs (as is probably the case with anyone who is using it solely for blogging).
 
 I stumbled across a couple of interesting solutions ([like hosting on s3](http://www.allthingsdistributed.com/2011/02/website_amazon_s3.html)). Ultimately, though, I like the idea of keeping it simple and having the content in a format I can easily export *and read with a text editor*.
@@ -31,4 +33,3 @@ Not as cool stuff:
 * I have to use git (pro and con)
 * Have to learn yet another templating language (Jekyll). This looks useful: [Jekyll Template Wiki](https://github.com/mojombo/jekyll/wiki/template-data).
 * All my blog updates are public on github (unless I want to start paying them for private repos)
-* I have to pay for a github account if I want to point a hostname at my github blog url (hross.net --> hross.github.com)
