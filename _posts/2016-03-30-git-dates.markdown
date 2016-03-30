@@ -1,0 +1,8 @@
+---
+layout: post
+title: Git Dates
+categories: [git, microsoft]
+---
+
+Here is another article I recently released via Microsoft.
+Pretty simple, but handy for keeping track of [Git Dates](https://www.visualstudio.com/en-us/articles/git-dates). 
